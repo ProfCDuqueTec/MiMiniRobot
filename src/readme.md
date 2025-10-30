@@ -85,6 +85,28 @@ flowchart LR
 | WAIT_STRIKE_MS | Tiempo de espera en contraataque | 250 | 100–400 |
 | SPIRAL_STEP_MS | Paso de radio en espiral | 200 | 150–300 |
 
+##🧩 Integración en el loop principal
+
+Ejemplo mínimo de uso en main.ino:
+```cpp
+#include "strategy.h"
+
+void setup() {
+  strategy_init();
+}
+
+void loop() {
+  execute_strategy();
+}
+```
+
+
+Cada kata puede activarse/desactivarse desde el código o mediante un menú de control DIP:
+```
+set_kata_enabled("burst_frontal", true);
+set_kata_enabled("flank_push", false);
+```
+
 ## Ciclo Kaizen
 1. 🧪 Prueba una kata 10 veces  
 2. 📊 Mide resultados  

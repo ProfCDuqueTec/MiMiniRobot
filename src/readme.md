@@ -57,6 +57,19 @@ flowchart LR
     K --> C
 ```
 
+##🥋 Catálogo de Katas disponibles
+Nivel	Nombre de Kata	Propósito	Activación recomendada
+Básica	kata_burst_frontal()	Ataque directo rápido	Detección central activa
+Básica	kata_sweep()	Barrido lateral de búsqueda	Sin detección durante >1s
+Básica	kata_retreat_and_ram()	Retirada y contraataque	Contacto prolongado
+Intermedia	kata_flank_push()	Ataque desde flancos	Detección lateral
+Intermedia	kata_spiral_drive()	Aproximación en espiral	Detección intermitente
+Intermedia	kata_stop_wait_strike()	Espera táctica y ataque	Rival impulsivo
+Avanzada	kata_torque_burst()	Control adaptativo de par	Combate prolongado
+Avanzada	kata_fakeout_pounce()	Finta y emboscada	Rival agresivo
+Avanzada	kata_adaptive_pressure()	Ajuste dinámico de agresividad	Combates extensos
+Experimental	kata_cooperative_rim_lift()	Empuje con torsión controlada
+
 ## Parámetros configurables
 | Parámetro | Descripción | Valor por defecto | Rango |
 |------------|-------------|------------------|--------|

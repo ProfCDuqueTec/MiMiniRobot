@@ -6,17 +6,25 @@ Este módulo implementa las estrategias de combate (katas) del robot mini sumo a
 Cada kata representa una rutina de ataque o búsqueda, inspirada en la filosofía japonesa de monozukuri —crear con precisión, propósito y disciplina.
 El robot combina sensores JS40F (detección de oponente) y QTR-1A (detección de línea) con control mediante Arduino Nano y drivers integrados en la placa oficial del workshop.
 
-mini_sumo_kaizen_v2/
-│
-├── src/
-│   ├── main.ino
-│   ├── motors.h / motors.cpp
-│   ├── sensors.h / sensors.cpp
-│   ├── strategy.h / strategy.cpp   ← (este módulo)
-│
-├── README.md                       ← guía de uso y parámetros
-└── docs/
-    └── bitacora_equipo.md          ← registro de iteraciones Kaizen
+
+---
+
+### 📁 Descripción de carpetas
+
+- **`src/`** – Código fuente principal del robot mini-sumo.  
+  - `main.ino` – Programa principal para Arduino.  
+  - `motors.h / motors.cpp` – Control de motores y movimiento.  
+  - `sensors.h / sensors.cpp` – Lectura de sensores QTR, ultrasónicos, etc.  
+  - `strategy.h / strategy.cpp` – Módulo de estrategias de ataque y defensa (Kata).  
+
+- **`docs/`** – Documentación del equipo.  
+  - `bitacora_equipo.md` – Registro Kaizen de mejoras, pruebas y aprendizajes.  
+
+- **`README.md`** – Guía de uso, parámetros configurables y créditos del proyecto.
+
+---
+
+
 
 
 ## Mapa FSM

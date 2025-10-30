@@ -3,7 +3,21 @@
 
 ## Descripción general
 Este módulo implementa las estrategias de combate (katas) del robot mini sumo autónomo usado en el *Kaizen Dōjō Experience 2025*.
-Cada kata representa una rutina de ataque o búsqueda inspirada en la filosofía *monozukuri* —crear con precisión, propósito y disciplina.
+Cada kata representa una rutina de ataque o búsqueda, inspirada en la filosofía japonesa de monozukuri —crear con precisión, propósito y disciplina.
+El robot combina sensores JS40F (detección de oponente) y QTR-1A (detección de línea) con control mediante Arduino Nano y drivers integrados en la placa oficial del workshop.
+
+mini_sumo_kaizen_v2/
+│
+├── src/
+│   ├── main.ino
+│   ├── motors.h / motors.cpp
+│   ├── sensors.h / sensors.cpp
+│   ├── strategy.h / strategy.cpp   ← (este módulo)
+│
+├── README.md                       ← guía de uso y parámetros
+└── docs/
+    └── bitacora_equipo.md          ← registro de iteraciones Kaizen
+
 
 ## Mapa FSM
 ```mermaid

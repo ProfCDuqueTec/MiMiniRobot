@@ -107,6 +107,21 @@ set_kata_enabled("burst_frontal", true);
 set_kata_enabled("flank_push", false);
 ```
 
+## Convenciones y uso rápido
+
+- Cada kata se expone como bool kata_<nombre>(void) o void kata_<nombre>(void) según convenga; las plantillas aquí usan bool para permitir indicar true=éxito / false=abort cuando aplique.
+- Los katas deben usar solo las funciones públicas de motors.h (set_motors, move_forward, move_backwards, stop_movement) y las variables/funciones de sensors.h (read_all_sensors(), line_sensor_left, sensor_middle, etc.). 
+- Incluye constantes de parámetros por kata (duraciones, potencias) al inicio de strategy.cpp para facilitar ajuste Kaizen.
+- execute_strategy() es la puerta de entrada: dentro de su flujo se ha dejado marcadores donde se puede seleccionar qué kata ejecutar (por DIP, menú o heurística).
+
+## Notas de integración y recomendaciones Kaizen
+
+- Prueba por fases: Implementa primero las katas básicas (burst_frontal, sweep, retreat_and_ram) y prueba cada una de forma aislada en el dojo. Documenta en la bitácora cada ajuste de parámetros.
+- Parámetros en un solo lugar: Si vas a ajustar valores en la competencia, crea un strategy_params.h o define los parámetros en una sección superior para versión controlada.
+- Seguridad: La detección de línea debe interrumpir inmediatamente cualquier rutina. Añade comprobaciones read_all_sensors() frecuentes dentro de bucles largos.
+- Estado de la kata: si una kata requiere varios pasos cronometrados, usa millis() y evita delay() en la medida de lo posible (si implementas concurrency leve).
+- Testing: Para cada kata registra 10 ejecuciones y anota tasa de éxito, tiempo medio y triggers de recuperación.
+
 ## Ciclo Kaizen
 1. 🧪 Prueba una kata 10 veces  
 2. 📊 Mide resultados  

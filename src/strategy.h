@@ -1,28 +1,42 @@
-#pragma once
+/**
+ * strategy.h
+ * Kaizen Dōjō — Katas de Ataque (interfaz)
+ *
+ * Declaraciones de funciones de alto nivel (katas) para integrar
+ * en el FSM principal del robot. Cada kata es una unidad de comportamiento.
+ */
+
+#ifndef STRATEGY_H
+#define STRATEGY_H
+
 #include <Arduino.h>
 
+// Función principal que se llama en loop()
 void execute_strategy();
+
+// Interrupción / fin de combate (ya existe en el repo)
 void end_match();
 
-// Inicialización de estrategia
-void strategy_init();
+// ----- Katas (declaraciones) -----
+// Básicas
+bool kata_burst_frontal();        // Burst frontal: aceleración máxima y empuje
+bool kata_sweep();                // Barrido lateral para localizar oponentes
+bool kata_retreat_and_ram();      // Retroceso corto + embestida
 
-// Katas básicas
-bool kata_burst_frontal();
-bool kata_sweep();
-bool kata_retreat_and_ram();
+// Intermedias
+bool kata_flank_push();           // Flanqueo y empuje lateral
+bool kata_spiral_drive();         // Aproximación en espiral y strike
+bool kata_stop_wait_strike();     // Detener - esperar - contraataque
 
-// Katas intermedias
-bool kata_flank_push();
-bool kata_spiral_drive();
-bool kata_stop_wait_strike();
+// Avanzadas
+bool kata_torque_burst();         // Control adaptativo de par (empuje)
+bool kata_fakeout_pounce();       // Finta y pounce
+bool kata_adaptive_pressure();    // Presión adaptativa por telemetría
+bool kata_cooperative_rim_lift(); // Experimental (si reglamento lo permite)
 
-// Katas avanzadas
-bool kata_torque_burst();
-bool kata_fakeout_pounce();
-bool kata_adaptive_pressure();
-bool kata_cooperative_rim_lift();
-
-// Control de activación
-void set_kata_enabled(const char *kata_name, bool enabled);
+// ----- Utilidades/help -----
+void strategy_init();             // Inicialización específica de estrategia (llamar en setup)
+void set_kata_enabled(const char *kata_name, bool enabled); // toggle (opcional)
 bool kata_is_enabled(const char *kata_name);
+
+#endif // STRATEGY_H

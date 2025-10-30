@@ -23,7 +23,19 @@ El robot combina sensores JS40F (detección de oponente) y QTR-1A (detección de
 - **`README.md`** – Guía de uso, parámetros configurables y créditos del proyecto.
 
 ---
-
+```css
+mini_sumo_kaizen_v2/
+│
+├── src/
+│   ├── main.ino
+│   ├── motors.h / motors.cpp
+│   ├── sensors.h / sensors.cpp
+│   ├── strategy.h / strategy.cpp   ← (este módulo)
+│
+├── README.md                       ← guía de uso y parámetros
+└── docs/
+    └── bitacora_equipo.md          ← registro de iteraciones Kaizen
+```
 
 
 

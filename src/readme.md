@@ -8,12 +8,13 @@ Cada kata representa una rutina de ataque o búsqueda inspirada en la filosofía
 ## Mapa FSM
 ```mermaid
 flowchart LR
-    A([Inicio]) --> B{Oponente detectado?}
-    B -- No --> C[Buscar (Sweep)]
+    A(Inicio) --> B{Oponente detectado?}
+    B -- No --> C[Buscar_Sweep]
     B -- Sí --> D{Posición del oponente}
     D -- Centro --> E[Burst Frontal]
     D -- Izquierda --> F[Flank Push]
     D -- Derecha --> G[Flank Push]
+    D -- Perdido --> C
     E --> H{En línea?}
     F --> H
     G --> H
